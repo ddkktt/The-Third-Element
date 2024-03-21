@@ -20,7 +20,7 @@ for i in classes:
 
 init()
 
-# Get screen resolution
+# Get screen resolution  a
 screen_res = display.Info()
 window_posX = screen_res.current_w//2 - 543
 window_posY = screen_res.current_h//2 - 300
