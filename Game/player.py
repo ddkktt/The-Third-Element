@@ -268,7 +268,7 @@ class Player(object):
 							self.mapy =  max(self.boundaries[scene][5][3], self.mapy-self.dy*1.5)
 						else:
 							self.y += self.dy
-
+					
 					# Move the player if map touches any of the four corners
 					if not self.boundaries[scene][0].collidepoint((self.x+self.dx, self.y+self.dy)):
 						# Top left corner

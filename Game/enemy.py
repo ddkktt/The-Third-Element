@@ -39,13 +39,16 @@ class Enemy(object):
 		self.customEnemies = {
 			"broth" : self.broth
 		}
+	def getEnemyInfo(self, info):
+		return [info[0], info[2], info[4], info[3]]
+
 
 	def randomEnemy(self, area, custom=None):
 		""" Returns random enemy based on location"""
 		# Return list if custom enemy is requested
 		if custom != None:
 			info = self.customEnemies[custom]
-			return [info[0], info[2], info[4], info[3]]
+			return self.getEnemyInfo(info)
 		# Handle main world enemies
 		else:
 			if area == "water":

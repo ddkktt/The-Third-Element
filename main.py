@@ -300,7 +300,7 @@ class Main:
 		self.moneyLocsUpdate = []
 		for i in moneyLocs:
 			self.moneyLocsUpdate.append((i[0]+self.player.mapx, i[1]+self.player.mapy))
-
+	
 		# Update player rect
 		self.playerRect = Rect(self.player.x,self.player.y,32,42)
 
