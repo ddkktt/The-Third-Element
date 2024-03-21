@@ -192,17 +192,21 @@ class Treasure:
 				self.gemFrame = 0
 
 			if fighting:
-				if self.inventoryRect.collidepoint(pos) and click and not self.settingsOn and not self.mapViewOn:
-					self.inventoryOn = True
+				if not self.settingsOn and not self.mapViewOn:
+					if self.inventoryOn:
+						self.player.canMove = False
+						self.inventoryDisplay(click)
+					if self.inventoryRect.collidepoint(pos) and click:
+						self.inventoryOn = True
+
 				elif self.settingsRect.collidepoint(pos) and click and not self.inventoryOn and not self.mapViewOn:
 					self.settingsOn = True
+					
 				elif self.mapViewRect.collidepoint(pos) and click and not self.settingsOn and not self.inventoryOn:
 					self.mapViewOn = True
 
 				# Check for button presses
-				if self.inventoryOn and not self.settingsOn and not self.mapViewOn:
-					self.player.canMove = False
-					self.inventoryDisplay(click)
+
 				if self.settingsOn and not self.inventoryOn and not self.mapViewOn:
 					self.player.canMove = False
 					self.settingsDisplay(click)
